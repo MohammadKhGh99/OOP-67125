@@ -1,0 +1,73 @@
+mohammadgh
+208653220
+Mohammad Ghanayem
+
+=====================================================
+========           contained files           ========
+=====================================================
+
+package filesprocessing
+    Filter
+        AllFilter
+        BetweenFilter
+        ContainsFilter
+        ExecutableFilter
+        FileFilter
+        GreaterThanFilter
+        HiddenFilter
+        PrefixFilter
+        SmallerThanFilter
+        SuffixFilter
+        WritableFilter
+
+        FilterFactory
+
+    Order
+        AbsOrder
+        TypeOrder
+        SizeOrder
+
+        OrderFactory
+
+    HelperException
+        BadParametersException
+        SectionException
+
+    Section
+    Parsing
+    DirectoryProcessor
+
+=====================================================
+========             description             ========
+=====================================================
+
+the package filesprocessing has all the exercise files in it.
+
+the Filter file has Filter abstract class in it with one abstract method and another public for help.
+all the files under it are Filters for the files, each one has its functionality.
+
+FileFactory, here I made a method to make a Filter by what written under the FILTER word line.
+
+Order, this abstract class has one method to implement in his ancestors: AbsOrder, TypeOrder, SizeOrder.
+    I used compareTo() function in TypeOrder and AbsOrder, but in SizeOrder I used "==","<",">", to compare
+    between the sizes.
+
+OrderFactory, this class creates an order by the line under "ORDER" word.
+
+I made a parent class for Exceptions called HelperException, and there are 2 types of Exceptions, one for bad
+parameters and one for section errors, like missing "FILTER" word in the start of each section.
+I heard some rumors that says that we cannot inherits from the Exception class directly, this means that if I
+want to create a new Exception and use it some where, I should made another father class for this exception
+that inherits from the Exception class, so I made the HelperException to inherits from the Exception class,
+then I made the two Exceptions that I want in my coding, that both of them inherits from the HelperException.
+Then finally I handled them in the main method in DirectoryProcessor.
+
+Section, has an array of warnings to print at the end of the program, also an array of the filtered and
+ordered files.
+
+Parsing, this class is responsible for parsing the command file and starts to work with it.
+
+DirectoryProcessor, this class takes the argument from the system and starts to parse and works with the files.
+
+in sorting by TypeOrder and SizeOrder, if any two files has the same Type or Size, I compared the absolute
+path for both of them, then sorted them.

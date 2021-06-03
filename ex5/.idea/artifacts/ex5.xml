@@ -1,0 +1,34 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ex5">
+    <output-path>$PROJECT_DIR$/out/artifacts/ex5</output-path>
+    <root id="archive" name="ex5.jar">
+      <element id="file-copy" path="$PROJECT_DIR$/src/README" />
+      <element id="directory" name="filesprocessing">
+        <element id="file-copy" path="$PROJECT_DIR$/src/filesprocessing/AbsOrder.java" />
+        <element id="file-copy" path="$PROJECT_DIR$/src/filesprocessing/AllFilter.java" />
+        <element id="file-copy" path="$PROJECT_DIR$/src/filesprocessing/BadParametersException.java" />
+        <element id="file-copy" path="$PROJECT_DIR$/src/filesprocessing/BetweenFilter.java" />
+        <element id="file-copy" path="$PROJECT_DIR$/src/filesprocessing/ContainsFilter.java" />
+        <element id="file-copy" path="$PROJECT_DIR$/src/filesprocessing/DirectoryProcessor.java" />
+        <element id="file-copy" path="$PROJECT_DIR$/src/filesprocessing/ExecutableFilter.java" />
+        <element id="file-copy" path="$PROJECT_DIR$/src/filesprocessing/FileFilter.java" />
+        <element id="file-copy" path="$PROJECT_DIR$/src/filesprocessing/Filter.java" />
+        <element id="file-copy" path="$PROJECT_DIR$/src/filesprocessing/FilterFactory.java" />
+        <element id="file-copy" path="$PROJECT_DIR$/src/filesprocessing/GreaterThanFilter.java" />
+        <element id="file-copy" path="$PROJECT_DIR$/src/filesprocessing/HelperException.java" />
+        <element id="file-copy" path="$PROJECT_DIR$/src/filesprocessing/HiddenFilter.java" />
+        <element id="file-copy" path="$PROJECT_DIR$/src/filesprocessing/Order.java" />
+        <element id="file-copy" path="$PROJECT_DIR$/src/filesprocessing/OrderFactory.java" />
+        <element id="file-copy" path="$PROJECT_DIR$/src/filesprocessing/Parsing.java" />
+        <element id="file-copy" path="$PROJECT_DIR$/src/filesprocessing/PrefixFilter.java" />
+        <element id="file-copy" path="$PROJECT_DIR$/src/filesprocessing/Section.java" />
+        <element id="file-copy" path="$PROJECT_DIR$/src/filesprocessing/SectionException.java" />
+        <element id="file-copy" path="$PROJECT_DIR$/src/filesprocessing/SizeOrder.java" />
+        <element id="file-copy" path="$PROJECT_DIR$/src/filesprocessing/SmallerThanFilter.java" />
+        <element id="file-copy" path="$PROJECT_DIR$/src/filesprocessing/SuffixFilter.java" />
+        <element id="file-copy" path="$PROJECT_DIR$/src/filesprocessing/TypeOrder.java" />
+        <element id="file-copy" path="$PROJECT_DIR$/src/filesprocessing/WritableFilter.java" />
+      </element>
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,28 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="unnamed">
+    <output-path>$PROJECT_DIR$/out/artifacts/unnamed</output-path>
+    <root id="archive" name="unnamed.jar">
+      <element id="directory" name="oop">
+        <element id="directory" name="ex6">
+          <element id="directory" name="main">
+            <element id="file-copy" path="$PROJECT_DIR$/src/oop/ex6/main/Block.java" />
+            <element id="file-copy" path="$PROJECT_DIR$/src/oop/ex6/main/FatherException.java" />
+            <element id="file-copy" path="$PROJECT_DIR$/src/oop/ex6/main/GlobalBlock.java" />
+            <element id="file-copy" path="$PROJECT_DIR$/src/oop/ex6/main/IfBlock.java" />
+            <element id="file-copy" path="$PROJECT_DIR$/src/oop/ex6/main/IllegalFormationException.java" />
+            <element id="file-copy" path="$PROJECT_DIR$/src/oop/ex6/main/Method.java" />
+            <element id="file-copy" path="$PROJECT_DIR$/src/oop/ex6/main/MethodBlock.java" />
+            <element id="file-copy" path="$PROJECT_DIR$/src/oop/ex6/main/Parsing.java" />
+            <element id="file-copy" path="$PROJECT_DIR$/src/oop/ex6/main/Sjavac.java" />
+            <element id="file-copy" path="$PROJECT_DIR$/src/oop/ex6/main/Variable.java" />
+            <element id="file-copy" path="$PROJECT_DIR$/src/oop/ex6/main/VarLine.java" />
+            <element id="file-copy" path="$PROJECT_DIR$/src/oop/ex6/main/WhileBlock.java" />
+          </element>
+          <element id="file-copy" path="$PROJECT_DIR$/src/oop/ex6/AllHelpingVariables.java" />
+          <element id="file-copy" path="$PROJECT_DIR$/src/oop/ex6/AllPatterns.java" />
+        </element>
+      </element>
+      <element id="file-copy" path="$PROJECT_DIR$/src/README" />
+    </root>
+  </artifact>
+</component>

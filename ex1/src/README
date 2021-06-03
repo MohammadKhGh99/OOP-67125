@@ -1,0 +1,66 @@
+mohammadgh
+
+MohamedAbuShakra IbraheemAsad
+
+file description:
+Book.java
+Patron.java
+Library.java
+the Book file have the Book class in it which describes all the fields of each book we initial, it contains 7
+fields and 5 methods and one constructor.
+the Patron file have the Patron class in it which describes all the fields of each patron who wants to borrow
+a book, the class contains 6 fields and 3 methods and one constructor.
+the Library file have the Library class in it which describes all the fields of each library we have, the
+class contains 7 fields and 10 methods and one constructor.
+
+design:
+the Book class was easy to implement, because everything is clear, the book have several fields that describe
+it, some are immutable and some are mutable, like the name is immutable and the comic value is mutable, the
+methods are: 1- stringRepresentation = it returns some of the book's fields as a string.
+
+             2- getLiteraryValue = it calculates and returns the literary value of a certain book.
+
+             3- setBorrowerId = it sets the borrower id of this book to the given id.
+
+             4- getCurrentBorrowerId = it returns the current borrower id of a certain book.
+
+             5- returnBook = it sets the borrower id of a certain book to -1.
+
+the Patron class also was easy to implement because of the explicit description of it in the api file, like
+the Book class, it has several fields, some are immutable like the first name and others are mutable like the
+comic value chosen by a certain patron.
+the methods are: 1- stringRepresentation = it returns the first name and the last name of the patron separated
+                    by space, and of course as a string.
+
+                 2- getBookScore = it calculates by a certain equation the score of the given book.
+
+                 3- willEnjoyBook = it returns true if the patron will enjoy the book or false if he will not.
+
+the Library class not like Book class or Patron class, it is more complex than the others, it has several
+fields, some are immutable like the maximum capacity of books in the library and the other are mutable like
+the number of the current books in the library.
+the methods are: 1- addBookToLibrary = it adds the given book to the library if it is has a place and returns
+                    the place of it and the same if it is in the library before, and -1 otherwise.
+
+                 2- isBookValid = checks if the book id is valid or not.
+
+                 3- getBookId = returns the place of the given book in the library and -1 otherwise.
+
+                 4- isBookAvailable = checks if the given book has no borrower or not.
+
+                 5- registerPatronToLibrary = it register the given patron to the library if there is a place
+                    in it or if he is in the library before and returns his place, and -1 otherwise.
+
+                 6- isPatronIdValid = checks if the given patron id valid in the library or not.
+
+                 7- getPatronId = return the place of the given patron in the library and -1 otherwise.
+
+                 8- borrowBook = it marks the book with the given patron id if the book is available and if he
+                    will enjoy it, returns true if the process succeeded or false if not.
+
+                 9- returnBook = marks the given book as returned (by returnBook method in Book class).
+
+                 10- suggestBookToPatron = tries to find a book that the given patron will enjoy the most and
+                     returns it, and null if there is not.
+
+borrowBook method was difficult also the suggestBookToPatron method.

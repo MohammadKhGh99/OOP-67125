@@ -1,0 +1,99 @@
+mohammadgh
+adam.m.s
+
+
+=============================
+=      File description     =
+=============================
+1 - Sjavac - this class describes the S-javac main process (composing all the functions together).
+2 - FatherException - This Class is Father of Exception in our project extend from the Exception's class.
+3 - IllegalFormationException - This Exception's class represent on the all exception occurs in the program.
+4 - AllHelpingVariables - This class describe all the Helping variable that we need to use them in the project.
+5 - Block - This class abstract describes each block of methods, if \ while conditions.
+6 - GlobalBlock - This GlobalBlock's class represent to the Global Variable of the file.
+7 - IfBlock - This class describe the If block extends Block class, parsing the if block...
+8 - WhileBlock - This class describe the While block extends Block class, parsing the while block...
+9 - MethodBlock -  This class describe the Method block extends Block class, parsing the method block...
+10 - Parsing - This class parsing the file has two static method.
+11 - Variable - Variable's Class represents to each variable.
+12 - Method -  Method's Class represents to each method.
+13 - VarLine - This class describes the Variable line methods.
+
+
+=============================
+=          Design           =
+=============================
+First of all We build class called AllHelpingVariable that have all the magic variable in order to use them in
+all the classes that we want to implement them.
+After that We build FatherException's class that extends from Exception's class from java like we do in ex5,
+so We build IllegalFormationException's class that extends from FatherException class has one constructor
+that receive the appropriate message to this case of Exception.
+
+We build Sjava class that composed main function and run the project from it, We implement Parsing class
+called by Sjava class that class parsing the file by calling on the other classes.
+
+GlobalBlock class is parsing on the file for the first time that take the global variables and the methods
+with the line of the start and end.
+
+
+Block class is a abstract class have some of functions that we use them from the classes that extend from,
+it has a one abstract function called parsingBlock, The classes IfBlock, WhileBlock, MethodBlock are extend
+from Block class, so they have to implement this function related to our part from the project.
+
+We build VarLine class that responsible to reading line checking the type, value, final, and if it is legal
+continue by his job of line, otherwise returns exception with the appropriate message.
+
+We build two Classes that represent on two important principle things (Variable, Method), to make the program
+easier and understandability We build Variable class that represent on each variable in the file code that
+each class has method member that describe each variable like name type isFinal...
+in the other hand We implement Method class that represent each method in the file, also has the
+characteristics of each method
+( a object of Variable class indicates of exist variable in file : a object of Method class indicates of
+exist method)
+
+>> In our program We used composition like building VarLine in GlobalBlock class, new Variable to each
+variable We used in MethodBlock and VarLine, new Method to each method in the file....
+We divide the big problem of compiler to small problem like divided the variables (global, local) and methods
+(if, while) and treat them then We collect them in Sjava class.
+Each class or function has a principle one mission meaning modularity to add things on them, easier,
+understandability to understand the code or modify on them.
+
+GlobalBlock has just static function and static method member in order that there is one global variable in
+the file and we want to use them in all parsing the file... inner the method... and no need to delete them
+by parsing the file also not changing them.
+
+=============================
+=    Answers to questions   =
+=============================
+(6.1)
+1) We build FatherException's class that extends from Exception's class from java like we do in ex5,
+   so We build IllegalFormationException's class that extends from FatherException class has one constructor
+   that receive the appropriate message to this case of Exception.
+   In each case of Error we throw new IllegalFormationException with the appropriate message.
+
+(6.2)
+2) < Adding new type 'float' >
+If We add a new type of variable when We have to add the type to our legal regex expression, also we have to
+add this type to checkType function in VarLine, adding the regex that appropriate to the type
+< Classes >
+in order to compiler classes in file we have to treat them like we do in methods like What the class has to
+be initialized by appropriate regex and know the start line of class and end of it like in method, also
+we can add a class called 'Class' that object of it represents on specific class that have characteristics
+like name a type of the class abstract or not the methods have and the methods member...
+also We have to change the GlobalBlock to be more than one class.
+<  Different methods’ types >
+Imagine We add a new method of type then we have to treat the method similar to variable means to take all
+the possible types by regex, and add type to Method Class, so we can by type of class to fit the return of
+the method not return;, adding new message Exception maybe the type not fit the return.
+meaning changing on the MethodBlock, Method, VarLine.
+
+3)
+1 - ILLEGAL_COMMENTS = "\\s*(?:/\\|/\\\\|.+//).\\s*"
+This ILLEGAL_COMMENTS was one of the main regular expression in the program, it is indicates to not legal
+comment that were in the description pdf >> we used it when we read the file, to check if the given line is
+legal or not.
+
+2 - IS_BOOLEAN = IS_INT + "|" + IS_DOUBLE + "|" + TRUE + "|" + FALSE
+This IS_BOOLEAN was also one of the regular expression, it describe the possible expression that can boolean
+take like int/double/true/false We called another regular expression in this expression that checks things
+like IS_INT = "-?\\d+" represents that possible numbers 0-9 one or more.

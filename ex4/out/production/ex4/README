@@ -1,0 +1,147 @@
+mohammadgh
+208653220
+Mohammad Ghanayem
+
+=====================================================
+========           contained files           ========
+=====================================================
+
+SimpleHashSet.java
+OpenHashSet.java
+ClosedHashSet.java
+CollectionFacadeSet.java
+SimpleSetPerformanceAnalyzer.java
+WrapperHelp.java
+README
+RESULTS
+
+=====================================================
+========             description             ========
+=====================================================
+
+In OpenHashSet I used a wrapper class that has a LinkedList data member, so I used it when I want to
+add/delete/search for a string in the OpenHashSet, I saw that this is the easiest way to make this "Array of
+LinkedLists", because I don't know how to use the CollectionFacadeSet for this purpose.
+
+-------------------------------------------
+The Implementation of OpenHashSet table:
+
+    I have made a new wrapper class that called WrapperHelper.java, this class contains a data member,
+    its type is LinkedList<String>, so I made an array in OpenHashSet that consists of WrapperHelper
+    instances, to use each LinkedList in the array, if I want to add/delete/search for a string in the
+    LinkedList in the i'th place, it's easy, just call the array in the i'th place then use the i'th
+    LinkedList add/delete/search method.
+
+    I put a data member that called "size" that increases when adding a string and deceases when deleting a
+    string from the OpenHashSet, if I want to resize I resets it to zero, because in resizing I will add
+    strings to OpenHashSet.
+
+    In contains method I used clamping for finding the right place for the wanted search value, and if it is
+    not "null" I call for the contains method for the LinkedList in the index that I had clamped, I used a
+    data member for saving the index of wanted string after searching for it, so I can later use it to delete
+    the required string.
+
+    In delete method, I used the data member that I mentioned above for saving the index of the required
+    string, so I will get it without loops, then I will take a help from the remove method for LinkedList
+    instance and will remove the required string from the OpenHashSet, then absolutely reducing one from the
+    "size" data member, then ,without a doubt, the resizing section.
+
+-------------------------------------------
+The deletion mechanism in ClosedHashSet:
+
+    First of all, I search for the required value, if it is in the set, I will replace the required String
+    with "null" then reducing 1 from the size, then absolutely checking if we need to resize the hashTable or
+    not, in the resizing I saved the hash table in other variable to save the current strings, then I will
+    empty the hash table, then I will add all the strings to the current hash table.
+    then I replaced every string that appears after the required string, that we want to delete, by the clamp
+    method, after replacing the strings I put the last string that has the same hash "null"
+
+-------------------------------------------
+The results of the analysis:
+
+In Adding data1.txt strings:
+
+    OpenHashSet:
+    the results of the method add for OpenHashSet were weak, because in the implementation of the method add
+    in OpenHashSet, first we will check if it is in the hash table, although all the strings in data1.txt file
+    have the same hash, so it will take long time.
+
+    ClosedHashSet:
+    the results of the method add for ClosedHashSet were worse than OpenHashSet, because the method contains
+    in ClosedHashSet weaker than the one in OpenHashSet, because in the method contains (that we use in add
+    method) will check all the n (length of the hash table) tries for finding any string, and the strings in
+    data1.txt have the same hash, so it will be difficult for the method add to work faster.
+
+In using contains method for the string "hi" for data1.txt strings:
+
+    OpenHashSet:
+    the results of the method contains with the string "hi" were amazing, because the string "hi" has a
+    unique hash from the others in data1.txt file, so the method will take a little time to find it, with the
+    hashing function.
+
+    ClosedHashSet:
+    the results of the method contains with the string "hi" were bad, because this method checks all the
+    possibilities, if the string were deleted before so its place will be "null" so the other strings that has
+    the same hash with "hi" should be in the place of the deleted one before, so the method will try to find
+    the string until it reaches the maximum number of tries.
+
+In using contains method on the string "-13170890158" for data1.txt strings:
+
+    OpenHashSet:
+    the results of the method contains with the string "-13170890158" were bad, because this string has a
+    similar hash with the others in the data1.txt file, so it will take a lot of time of working to find the
+    string (if it is in).
+
+    ClosedHashSet:
+    the results of the method contains with the string "-13170890158" were bad too, because it has the same
+    hash as the other strings in data1.txt file, so it will be complicated for the method to find it.
+
+In Adding data2.txt strings:
+
+    OpenHashSet:
+    the results of the method add for OpenHashSet were surprising, because it took a little time to add all
+    the 99999 string from the data2.txt file, why?, because for adding a string for the OpenHashSet we just
+    want his hash, then we will add it to the LinkedList that is in the required place, as if we say that
+    the time Complexity is O(1)!!!
+
+    ClosedHashSet:
+    the results of the method add for ClosedHashSet were better than adding from data1.txt file, because this
+    file has a mixture of different strings, so the ClosedHashSet will not has a difficulty with adding these
+    strings, because there is a diversity in the hashing, it took the worst time of all the 5 data structure!
+
+In using contains method on the string "23" for data2.txt strings:
+
+    OpenHashSet:
+    the results of the method contains with the string "23" were surprising, because it took a little time to
+    "find" the required string, because the string "23" is in the data2.txt file, so by using th method
+    contains in th OpenHashSet that is so fast in searching, we will "find" the required string fast by
+    hashing, when hashing we will took an index, so we will use the method contains in the LinkedList.
+
+    ClosedHashSet:
+    the results of the method contains with the string "23" were amazing comparing with searching for any
+    string that we searched for in data1.txt, because the string "23" is in the hash table, so it will not be
+    hard to "find" it.
+
+In using contains method on the string "hi" for data1.txt strings:
+
+    OpenHashSet:
+    the results of the method contains with the string "hi" were surprising, because it took a little time to
+    "find" it, because when searching for "hi" we will took an index, so we will take the LinkedList that is
+    in this index and use its contains method, and that's it, it will return false.
+
+    ClosedHashSet:
+    the results of the method contains with the string "hi" were better than using contains method on
+    data1.txt file, and it is not in the hash table, in searching for "hi" in data1.txt file it took about 4
+    more times than searching in data2.txt file.
+
+* If I want to use any of my implemented HashSets, I will choose the OpenHashSet, because it is faster in
+everything, adding/searching.
+
+* But in the other hand the built in HashSet is better, because it took a constant time every time, but my
+implementations sometimes it took a lot of time and sometimes it took a normal time, so I absolutely will
+choose the built in HashSet.
+
+* I think that in the implementation of the built in HashSet they used the hashing in contains, delete, add
+methods more effectively than me, maybe I didn't take some possibilities or some tricks, and the built in
+HashSet has a lot of developers that means that a lot of brains thought in building it, not just one as mines,
+so at this time I will accept the lose but I wish that I will beat them in the future 😅

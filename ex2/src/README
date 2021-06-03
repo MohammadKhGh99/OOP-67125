@@ -1,0 +1,41 @@
+mohammadgh
+208653220
+Mohammad Ghanayem
+
+README file for SpaceWars exercise =====>
+
+file description:
+Aggressive.java
+Basher.java
+Drunkard.java
+Human.java
+Runner.java
+SpaceShip.java
+SpaceShipFactory.java
+Special.java
+
+*the Aggressive file has the Aggressive type of SpaceShip and what it could do while playing.
+*the Basher file has the Basher type of SpaceShip and what it could do while playing.
+*the Drunkard file has the Drunkard type of SpaceShip and what it could do while playing.
+*the Human file has the Human type of SpaceShip and what it could do while playing.
+*the Runner file has the Runner type of SpaceShip and what it could do while playing.
+*the Special file has the Special type of SpaceShip and what it could do while playing.
+*the SpaceShip file is the father of all the files above, they all extend from it, and have fields in common.
+*the SpaceShipFactory file is the factory that produce SpaceShip by the program parameters, it takes them like
+chars and gives us an array of all the types of the entered types of SpaceShips.
+
+I make the ability to add more methods to each class is accessible, anyone has the files can add whatever he
+wants, I think that I didn't make any method related to any method in another class, that means that if we
+replaced the 6 files of types of SpaceShips the program will start without errors and smoothly, for
+understandability I added comments above every field and method and even class, what this method do, what this
+ class describes, for what this field used...
+ I think that the 6 files of SpaceShip has no relationship other than their only father (SpaceShip class),
+ they have some processes in common, the basher and aggressive and special pursue the other spaceships, the
+ fire, shield on\off, teleporting, the special spaceship has a lot of different things that differ from the
+ other ships, like the initial health, initial max energy...
+ the drunkard spaceship: I made it to do everything randomly, once accelerate to the left and once to the
+ right and once forward, it puts the shield on once per.. i don't know :)
+ the special spaceship: his movement like aggressive and basher, it will pursue the other spaceships, and will
+  fire at the enemy a lot of shots when it become close to it, it will put the shield all the time! the
+  initial max energy and current energy are 1000, the initial health is 30 and increasing, its like god mode,
+  no one can defeat it!!!

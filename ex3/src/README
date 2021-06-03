@@ -1,0 +1,57 @@
+mohammadgh
+208653220
+Mohammad Ghanayem
+
+Section C - Implementing Storage
+Design Choices:
+    When I started to code, I have realized that the Locker and LongTermStorage are the same kind, that is
+    a "Storage" that we can store something in it, so I made a decision that I must make another class
+    that is an abstract or an interface, I chose the interface because all the methods we should implement
+    for each "son" for this "Storage"  interface class, I didn't choose an abstract class because at the
+    beginning I wanted to implement several methods in the father class, but I worried about if the
+    implemented method, if they will appear in the api for each "son" class or not, so for the insurance I
+    made a decision that I want to make the father class as interface!
+
+How did you choose to store the information? Why did you prefer it to other methods?
+    I chose the HashMap<String,Integer> data structure, because for each item in the "Storage" there
+    is an amount, that will help us to know how much of any item there is in this "Storage", and if We
+    want to know how much items of any item there are in this "Storage", we can use the method "put"
+    with the name of the item that we want to find the amount for it for this HashMap<String,Integer>,
+    if I used any other data structure ,it will be more difficult to know the amount of each item in
+    this "Storage", and it will take a lot of time.
+    I made the capacity for the Locker and LongTermStorage a final data member, because it must not
+    change during time.
+
+Explain how you chose the dataset for each test.
+    For testing an empty file input I used the hotels_tst2.txt because it is empty file (-\_|_/-),
+    when we sort the hotels_dataset.txt with getHotelsInCityByProximity method the returned array
+    should be the same as if we used the hotels_tst1.txt and sorted it by getHotelsByProximity method,
+    because as I tested, the file hotels_tst1.txt has all the hotels that are in
+    the hotels_dataset.txt whom in the same city.
+
+SearchEngine:
+Section B - Compare by Rating
+
+Design Decisions for getHotelsInCityByRating method:
+    I wrote a helper method that filtering the array of hotels by the city that they are in, I put the
+    filtered hotels in an LinkedList<Hotel>, because I want to sort the hotels by star rating, so I used the
+    functionality sort(Comparator) on the filtered hotels, and sorted them by star rating in decreasing order,
+    if two or more of hotels have the same star rating the Comparator should sort by the alphabet order.
+
+Design Decisions for the getHotelsByProximity and getHotelsInCityByProximity methods:
+    Firstly, I wrote the getHotelsByProximity, I checked the latitude and longitude inputs, then I create a
+    LinkedList<Hotel> and added to it the whole hotels in the given hotels file, so now I can use the
+    functionality sort for the LinkedList, I gave the sort function a Comparator that will sort the hotels by
+    the distance in ascending order of the given latitude and longitude, then, In the Comparator, if two or
+    more hotels have the same proximity the Comparator must sort them by the number of point-of-interest in
+    decreasing order.
+
+    In getHotelsInCityByProximity I ran the getHotelsByProximity method and added the result to a LinkedList,
+    then I ran the function that I made in the getHotelsInCityByRating so filter the hotels by city, after all
+    of this the array that I wanted sorted by proximity and filtered by city will be ready.
+
+I made a lot of Helping Functions, one of them converting a List to an Array.
+
+
+
+

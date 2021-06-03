@@ -1,0 +1,114 @@
+mhmd.tawil
+
+
+==========
+= File description =
+==========
+
+----parser package-----
+1)CompilationEnigine.java:contains the CompilationEngine class.
+
+2)SendLine.java:contains the SendLine class.
+
+3)Scope.java:contains the Scope class.
+
+4)Method.java:contains the method class.
+
+5)Regex.java:contains the Regex interface.
+
+6)Variable.java:contains the Variable class.
+
+7)Error.java:contains the Error class.
+
+-----main package-------
+1)Sjavac:contains the javac class.
+
+-------------------
+
+
+
+===============
+= Design =
+===============
+
+firstly i decided to make all the compile process in the 
+CompilationEnginr class
+so this class just manages the compilation process which gurantee the modularity
+,the reason that lead me to make this class asn an abstract class is because
+that i don't create any obj from it.
+furthemore,i decided to make a class for each huge section of the code like:
+variable,scope,methods,so each class just manages it's own section,which also
+guarantee modularity.
+
+also,i build a class which is responsible for sending the cur line to the 
+CompilationEngine class,which also guarantee modularity and decomposibilty.
+
+
+Strategy: in the SendLine class we see that there a Strategy design pattern
+because we select the relevant method according to the line and the the 
+appropreiate matcher.
+
+interface:i decided to use an interface which contains the relevant regexes
+also,theCompilationMethod class and the SendLine class implements it.
+
+
+in the end,the main class is connected withe SendLine class,and in this class
+we print the output of our compilation.
+
+===========================
+
+=Implementation=
+
+===========================
+
+
+in my code each scope has his own varLst, and in each time we open ({) we
+increase the num of the sope by one,and when we close(})we decrease by one,
+and when we open ({)we start a new varLst just for the vars which exsits 
+in this scope.
+
+also,in order to detect if there is a matching between the calledmethod args
+and the appropreiate method def i build a method hashMap which contains the
+name of the method and an array which contains the types of this method
+params.
+
+note:my code contain more eplaining about the implementation
+===================
+
+questions: 
+
+how handle exception: i used the exception in the sad i will me 
+package and it help me
+to catch the illegal case faster,each method will throw if illegal then
+catch in the main and print
+
+
+
+how to modify:i can change the regex.
+
+
+
+
+1)classes:i will build i new class which contain the class relevant things
+the compilation process will continue to be in the compilation engine class
+
+
+2)different methids type: i will use more extensive regex to catch this
+in the end i will also extend the compiler method of return 
+to gruarantee the it return the appropreiate type of the method
+
+
+important regexes:
+
+1)the if/while regex:it was very easy to match a statement by it 
+and get the content of this statement 
+
+2)the complexvardec regex:without regex it will be very complex to  catch 
+this type of decleration -->>int a=6,b,c....
+
+
+
+
+
+
+ 
